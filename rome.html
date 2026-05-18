@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en" id="html">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>35mm Archive — Rome | Licensed 35mm Film Photography</title>
+<meta name="description" content="Licensed archive of 35mm film photography from Rome, Italy. Ancient ruins, baroque fountains and Roman street life — available for hotels, travel brands, editorial publications and interior designers." />
+<meta property="og:title" content="35mm Archive — Rome | Licensed 35mm Film Photography" />
+<meta property="og:description" content="Licensed archive of 35mm film photography from Rome, Italy. Available for hotels, travel brands, editorial publications and interior designers." />
+<meta property="og:type" content="website" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%231c1c1c'/><text x='16' y='21' font-family='Georgia,serif' font-size='13' font-weight='bold' fill='%23f9f8f5' text-anchor='middle'>35</text></svg>" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { background: #f9f8f5; color: #1c1c1c; font-family: 'Jost', sans-serif; font-weight: 300; line-height: 1.6; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+img { max-width: 100%; display: block; }
+
+.reveal { opacity: 0; translate: 0 52px; transition: opacity 1s cubic-bezier(.4,0,.2,1), translate 1s cubic-bezier(.4,0,.2,1); }
+.reveal.in-view { opacity: 1; translate: 0 0; }
+
+/* ─── HEADER ─── */
+header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 18px 48px; background: rgba(249,248,245,.92); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid rgba(0,0,0,.07); }
+.brand { font-family: 'Playfair Display', serif; font-size: 15px; font-weight: 500; text-transform: uppercase; letter-spacing: 3.5px; }
+.brand em { font-style: italic; font-weight: 400; text-transform: none; letter-spacing: 1px; color: #2a2a25; }
+.city-switcher { display: flex; align-items: center; }
+.city-tab { font-family: 'Jost', sans-serif; font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase; padding: 7px 22px; text-decoration: none; color: #2a2a25; border: 1px solid rgba(0,0,0,.2); transition: background .25s, color .25s, border-color .25s; }
+.city-tab + .city-tab { border-left: none; }
+.city-tab--active { background: #1c1c1c; color: #f9f8f5; border-color: #1c1c1c; }
+.city-tab:not(.city-tab--active):hover { background: rgba(0,0,0,.05); }
+.header-nav { display: flex; align-items: center; gap: 28px; }
+.nav-link { font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase; color: #2a2a25; text-decoration: none; transition: color .25s; }
+.nav-link:hover { color: #1c1c1c; }
+.lang-btn { background: none; border: 1px solid rgba(0,0,0,.22); font-family: 'Jost', sans-serif; font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase; color: #2a2a25; padding: 5px 13px; transition: background .25s, color .25s, border-color .25s; }
+.lang-btn:hover { background: #1c1c1c; color: #f9f8f5; border-color: #1c1c1c; }
+
+/* ─── HERO EDITORIAL ─── */
+.hero-editorial { padding-top: 61px; }
+.hero-meta-bar { display: flex; justify-content: space-between; align-items: center; padding: 16px 48px; border-bottom: 1px solid rgba(0,0,0,.08); font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase; color: #3a3934; }
+.hero-name-block { padding: 48px 48px 0; display: grid; grid-template-columns: 1fr auto; gap: 80px; align-items: end; }
+.hero-name { font-family: 'Playfair Display', serif; font-size: clamp(68px, 10.5vw, 195px); font-weight: 500; text-transform: uppercase; line-height: .88; letter-spacing: -3px; will-change: transform; }
+.hero-name em { display: block; font-style: italic; font-weight: 400; text-transform: none; color: #2a2a25; letter-spacing: -1px; }
+.hero-name-right { text-align: right; padding-bottom: 10px; flex-shrink: 0; }
+.hero-infobar { padding: 20px 48px 28px; border-bottom: 1px solid rgba(0,0,0,.08); }
+.hero-lede { font-family: 'Playfair Display', serif; font-size: clamp(14px, 1.1vw, 17px); line-height: 1.55; max-width: 58ch; color: #3a3934; }
+.hero-image-block { width: 100%; user-select: none; -webkit-user-select: none; }
+.hero-image-block img { width: 100%; height: auto; display: block; pointer-events: none; -webkit-user-drag: none; user-select: none; }
+.price-summary { font-family: 'Playfair Display', serif; font-size: 14px; letter-spacing: 1.5px; line-height: 2; color: #3a3934; margin-bottom: 24px; }
+.price-summary strong { color: #1c1c1c; font-weight: 500; }
+.price-summary .note { display: block; font-style: italic; font-size: 13px; color: #3a3934; letter-spacing: .5px; line-height: 1.6; margin-top: 6px; }
+.buy-link { display: inline-flex; align-items: center; gap: 14px; padding: 18px 34px; background: #1c1c1c; color: #f9f8f5; text-decoration: none; font-size: 11px; letter-spacing: 3.5px; text-transform: uppercase; transition: background .3s ease; cursor: pointer; }
+.buy-link:hover { background: #2a2a25; }
+.buy-link .arrow { transition: transform .3s ease; }
+.buy-link:hover .arrow { transform: translateX(6px); }
+
+/* ─── DIVIDER + GALLERY ─── */
+.divider-row { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 32px; max-width: 1800px; margin: 0 auto; padding: 80px 6vw 56px; }
+.divider-label { font-family: 'Playfair Display', serif; text-transform: uppercase; font-size: 13px; letter-spacing: 4px; font-weight: 500; }
+.divider-rule { height: 1px; background: rgba(0,0,0,.18); }
+.divider-meta { font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase; color: #3a3934; }
+.gallery { padding: 20px 0 140px; }
+.photo-wrap { max-width: 1100px; margin: 64px auto 0; transform: translateX(var(--x, 0)); }
+.photo-wrap:first-of-type { margin-top: 24px; }
+figure.photo { position: relative; width: 100%; overflow: hidden; background: #1c1c1c; }
+figure.photo img { width: 100%; height: auto; -webkit-user-drag: none; user-select: none; pointer-events: none; display: block; }
+.frame-no { position: absolute; top: 22px; left: 24px; z-index: 3; font-family: 'Playfair Display', serif; font-style: italic; font-size: 14px; color: rgba(249,248,245,.9); text-shadow: 0 2px 10px rgba(0,0,0,.3); }
+.price-tag { position: absolute; top: 18px; right: 18px; z-index: 3; background: rgba(249,248,245,.95); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); padding: 10px 18px; display: flex; align-items: baseline; gap: 10px; font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 500; }
+.price-tag .per { font-family: 'Jost', sans-serif; font-size: 9px; letter-spacing: 2.5px; text-transform: uppercase; font-weight: 300; color: #2a2a25; }
+.watermark { position: absolute; inset: 0; z-index: 2; display: flex; align-items: center; justify-content: center; pointer-events: none; overflow: hidden; }
+.watermark span { font-family: 'Playfair Display', serif; font-style: italic; color: rgba(255,255,255,.2); font-size: clamp(22px, 3vw, 42px); letter-spacing: 8px; text-transform: uppercase; transform: rotate(-22deg); white-space: nowrap; }
+.photo-overlay { position: absolute; inset: 0; z-index: 4; background: linear-gradient(to top, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.08) 45%, transparent 100%); display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end; padding: 28px 32px; opacity: 0; transition: opacity .45s ease; pointer-events: none; }
+figure.photo:hover .photo-overlay { opacity: 1; }
+.photo-overlay svg { width: 18px; height: 18px; margin-bottom: 10px; stroke: rgba(255,255,255,.9); stroke-width: 1.4; fill: none; }
+.photo-overlay .ov-label { font-family: 'Jost', sans-serif; font-weight: 300; text-transform: uppercase; font-size: 10px; letter-spacing: 3.5px; color: rgba(255,255,255,.95); }
+.photo-overlay .ov-loc { font-family: 'Playfair Display', serif; font-style: italic; font-size: 15px; color: rgba(255,255,255,.85); margin-top: 6px; }
+.caption-strip { display: grid; grid-template-columns: auto 1fr auto; gap: 20px; align-items: baseline; padding: 16px 2px 0; font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase; color: #3a3934; }
+.cap-title { font-family: 'Playfair Display', serif; font-style: italic; text-transform: none; letter-spacing: .3px; font-size: 14px; color: #1c1c1c; }
+.cap-rule { height: 1px; background: rgba(0,0,0,.14); }
+
+/* ─── CONTACT ─── */
+.contact { padding: 140px 6vw 160px; max-width: 1800px; margin: 0 auto; text-align: center; border-top: 1px solid rgba(0,0,0,.09); }
+.contact h2 { font-family: 'Playfair Display', serif; font-weight: 500; text-transform: uppercase; font-size: clamp(42px, 8vw, 120px); line-height: .95; letter-spacing: -1.5px; margin-bottom: 36px; }
+.contact h2 em { font-style: italic; font-weight: 400; text-transform: none; color: #2a2a25; }
+.contact p { max-width: 48ch; margin: 0 auto 48px; color: #3a3934; font-size: 17px; }
+.contact-form-wrap { max-width: 560px; margin: 0 auto; text-align: left; }
+.form-row { margin-bottom: 40px; }
+.form-label { display: block; font-family: 'Jost', sans-serif; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: #1c1c1c; margin-bottom: 10px; }
+.form-field { display: block; width: 100%; background: none; border: none; border-bottom: 0.5px solid rgba(0,0,0,.35); padding: 10px 0 12px; font-family: 'Playfair Display', serif; font-style: italic; font-size: 18px; color: #1c1c1c; outline: none; transition: border-color .3s ease; border-radius: 0; -webkit-appearance: none; }
+.form-field:focus { border-bottom-color: #1c1c1c; }
+.form-field::placeholder { color: #3a3934; font-style: italic; }
+.form-textarea { resize: none; line-height: 1.65; }
+.form-submit { display: block; width: 100%; padding: 20px 24px; background: #1c1c1c; color: #f9f8f5; border: none; font-family: 'Jost', sans-serif; font-size: 11px; letter-spacing: 3.5px; text-transform: uppercase; cursor: pointer; transition: background .3s ease, opacity .3s ease; margin-top: 8px; }
+.form-submit:hover:not(:disabled) { background: #2a2a25; }
+.form-submit:disabled { opacity: .45; }
+.form-error { font-family: 'Playfair Display', serif; font-style: italic; font-size: 14px; color: #8b2020; margin-bottom: 20px; display: none; }
+.form-success { padding: 56px 0 24px; font-family: 'Playfair Display', serif; font-size: clamp(20px, 2.2vw, 26px); font-style: italic; line-height: 1.5; color: #1c1c1c; text-align: center; }
+
+/* ─── FOOTER + MODAL ─── */
+footer { padding: 40px 52px; border-top: 1px solid rgba(0,0,0,.09); display: flex; justify-content: space-between; align-items: center; font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase; color: #3a3934; }
+.brand-small { font-family: 'Playfair Display', serif; text-transform: uppercase; letter-spacing: 3px; font-size: 13px; font-weight: 500; color: #1c1c1c; }
+.modal { position: fixed; inset: 0; background: rgba(20,18,12,.55); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); display: none; align-items: center; justify-content: center; z-index: 200; padding: 40px 20px; }
+.modal.open { display: flex; }
+.modal-inner { background: #f9f8f5; max-width: 520px; width: 100%; padding: 60px 52px; position: relative; box-shadow: 0 40px 80px rgba(0,0,0,.25); }
+.modal-close { position: absolute; top: 18px; right: 22px; background: none; border: none; font-size: 28px; color: #2a2a25; line-height: 1; cursor: pointer; }
+.modal-eye { font-size: 10px; letter-spacing: 3.5px; text-transform: uppercase; color: #3a3934; margin-bottom: 18px; }
+.modal-title { font-family: 'Playfair Display', serif; font-size: 38px; font-weight: 500; text-transform: uppercase; letter-spacing: -.5px; line-height: 1.05; margin-bottom: 10px; }
+.modal-sub { font-family: 'Playfair Display', serif; font-style: italic; color: #2a2a25; font-size: 15px; margin-bottom: 36px; }
+.price-block { border-top: 1px solid rgba(0,0,0,.12); border-bottom: 1px solid rgba(0,0,0,.12); padding: 22px 0; margin-bottom: 12px; }
+.price-row { display: flex; justify-content: space-between; align-items: baseline; padding: 8px 0; }
+.price-row .desc { font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase; color: #3a3934; }
+.price-row .amt { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 500; }
+.modal-special { font-family: 'Playfair Display', serif; font-style: italic; font-size: 13px; color: #3a3934; text-align: right; margin-bottom: 28px; }
+.inq-btn { display: block; width: 100%; padding: 20px 24px; background: #1c1c1c; color: #f9f8f5; text-align: center; text-decoration: none; font-size: 11px; letter-spacing: 3.5px; text-transform: uppercase; transition: background .3s; cursor: pointer; }
+.inq-btn:hover { background: #2a2a25; }
+
+/* ─── PRICING / LICENSING ─── */
+.pricing-full { padding: 120px 6vw 80px; max-width: 1800px; margin: 0 auto; border-top: 1px solid rgba(0,0,0,.09); }
+.section-eyebrow { font-size: 10px; letter-spacing: 3.5px; text-transform: uppercase; color: #3a3934; display: block; margin-bottom: 20px; }
+.pricing-header { text-align: center; margin-bottom: 72px; }
+.pricing-header h2 { font-family: 'Playfair Display', serif; font-size: clamp(36px, 5vw, 68px); font-weight: 500; text-transform: uppercase; letter-spacing: -1px; line-height: .95; margin-bottom: 22px; }
+.pricing-header h2 em { font-style: italic; font-weight: 400; text-transform: none; color: #2a2a25; }
+.pricing-header p { max-width: 44ch; margin: 0 auto; color: #3a3934; font-size: 16px; line-height: 1.65; }
+.pricing-grid { display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid rgba(0,0,0,.12); margin-bottom: 48px; align-items: stretch; }
+.price-card { padding: 48px 36px 52px; border-right: 1px solid rgba(0,0,0,.12); display: flex; flex-direction: column; }
+.price-card:last-child { border-right: none; }
+.price-card.pc-featured { background: #1c1c1c; color: #f9f8f5; }
+.pc-tier { font-size: 10px; letter-spacing: 3.5px; text-transform: uppercase; color: #3a3934; margin-bottom: 28px; display: block; }
+.pc-featured .pc-tier { color: rgba(249,248,245,.55); }
+.pc-price { font-family: 'Playfair Display', serif; font-size: clamp(26px, 3vw, 44px); font-weight: 500; margin-bottom: 16px; line-height: 1.1; }
+.pc-desc { font-size: 13px; line-height: 1.65; color: #3a3934; margin-top: auto; padding-top: 16px; }
+.pc-featured .pc-desc { color: rgba(249,248,245,.65); }
+.pricing-note-text { text-align: center; font-family: 'Playfair Display', serif; font-style: italic; font-size: 14px; color: #3a3934; max-width: 62ch; margin: 0 auto 80px; line-height: 1.7; }
+.use-cases { display: flex; justify-content: center; flex-wrap: wrap; align-items: center; padding: 36px 0; border-top: 1px solid rgba(0,0,0,.09); border-bottom: 1px solid rgba(0,0,0,.09); }
+.use-cases span { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: #3a3934; padding: 6px 28px; }
+.use-cases span + span { border-left: 1px solid rgba(0,0,0,.15); }
+
+/* ─── PROCESS ─── */
+.process-section { padding: 100px 6vw; max-width: 1800px; margin: 0 auto; border-top: 1px solid rgba(0,0,0,.09); }
+.process-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 80px; margin-top: 56px; }
+.process-step-no { font-family: 'Playfair Display', serif; font-size: 72px; font-weight: 500; color: rgba(0,0,0,.06); line-height: 1; display: block; margin-bottom: 24px; }
+.process-step h3 { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 500; text-transform: uppercase; letter-spacing: .3px; margin-bottom: 14px; }
+.process-step p { color: #3a3934; font-size: 15px; line-height: 1.75; }
+
+/* ─── ABOUT ─── */
+.about-section { padding: 100px 6vw 130px; max-width: 1800px; margin: 0 auto; border-top: 1px solid rgba(0,0,0,.09); display: grid; grid-template-columns: 200px 1fr; gap: 80px; align-items: start; }
+.about-section h2 { font-family: 'Playfair Display', serif; font-size: clamp(36px, 4vw, 58px); font-weight: 500; text-transform: uppercase; letter-spacing: -1px; line-height: .95; margin-bottom: 34px; }
+.about-section h2 em { font-style: italic; font-weight: 400; text-transform: none; color: #2a2a25; }
+.about-section p { color: #3a3934; font-size: 16px; line-height: 1.8; max-width: 54ch; }
+.about-section p + p { margin-top: 20px; }
+
+/* ─── INSTAGRAM + EMAIL ─── */
+.insta-link { display: inline-flex; align-items: center; gap: 9px; margin-top: 28px; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #1c1c1c; text-decoration: none; padding-bottom: 3px; border-bottom: 1px solid rgba(0,0,0,.18); transition: border-color .25s, color .25s; }
+.insta-link:hover { border-color: #1c1c1c; color: #2a2a25; }
+.insta-link svg { width: 15px; height: 15px; flex-shrink: 0; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.contact-email { display: block; text-align: center; font-family: 'Playfair Display', serif; font-style: italic; font-size: 16px; color: #3a3934; text-decoration: none; margin: -28px auto 52px; width: fit-content; padding-bottom: 3px; border-bottom: 1px solid rgba(0,0,0,.2); transition: color .25s, border-color .25s; }
+.contact-email:hover { color: #1c1c1c; border-color: #1c1c1c; }
+.footer-insta { color: #3a3934; text-decoration: none; letter-spacing: 2.5px; transition: color .25s; font-size: 10px; text-transform: uppercase; }
+.footer-insta:hover { color: #1c1c1c; }
+
+@media (max-width: 820px) {
+  header { padding: 12px 20px; flex-wrap: wrap; gap: 10px; }
+  .brand { font-size: 13px; letter-spacing: 2px; }
+  .city-switcher { order: 3; width: 100%; justify-content: center; }
+  .city-tab { padding: 6px 18px; }
+  .header-nav { gap: 16px; }
+  .nav-link { display: none; }
+  .hero-meta-bar { padding: 12px 20px; flex-wrap: wrap; gap: 6px; justify-content: flex-start; }
+  .hero-name-block { padding: 28px 20px 0; grid-template-columns: 1fr; gap: 28px; }
+  .hero-name { font-size: clamp(52px, 14vw, 90px); letter-spacing: -1.5px; }
+  .hero-name-right { text-align: left; }
+  .hero-infobar { padding: 16px 20px 24px; }
+  .divider-row { padding: 60px 24px 40px; gap: 14px; }
+  .photo-wrap { width: 100% !important; transform: none !important; margin: 32px 0 0; }
+  .gallery { padding: 20px 0 60px; }
+  .contact { padding: 80px 24px 100px; }
+  .modal-inner { padding: 40px 28px; } .modal-title { font-size: 30px; }
+  footer { flex-direction: column; gap: 10px; text-align: center; padding: 28px 20px; }
+  .pricing-full { padding: 80px 24px 60px; }
+  .pricing-grid { grid-template-columns: 1fr 1fr; }
+  .price-card { border-right: none; border-bottom: 1px solid rgba(0,0,0,.12); }
+  .price-card:nth-child(odd) { border-right: 1px solid rgba(0,0,0,.12); }
+  .price-card:last-child { border-bottom: none; }
+  .use-cases { flex-direction: column; align-items: flex-start; padding: 28px 0; gap: 10px; }
+  .use-cases span { border-left: none !important; padding: 4px 0; }
+  .process-section { padding: 80px 24px; }
+  .process-grid { grid-template-columns: 1fr; gap: 48px; }
+  .about-section { grid-template-columns: 1fr; gap: 28px; padding: 80px 24px 100px; }
+}
+</style>
+</head>
+<body oncontextmenu="return false;">
+
+<header>
+  <div class="brand">35mm <em>Archive</em></div>
+  <div class="city-switcher">
+    <a href="index.html" class="city-tab" data-i18n="nav-sicily">Sicily</a>
+    <span class="city-tab city-tab--active">Rome</span>
+  </div>
+  <nav class="header-nav">
+    <a href="#work" class="nav-link" data-i18n="nav-work">Work</a>
+    <a href="#contact" class="nav-link" data-i18n="nav-license">License</a>
+    <button id="langBtn" class="lang-btn">IT</button>
+  </nav>
+</header>
+
+<section class="hero-editorial">
+  <div class="hero-meta-bar">
+    <span data-i18n="h-top-l">Edition 2024 — 2026</span>
+    <span data-i18n="h-top-c">Hand-scanned · Licensed archive</span>
+    <span data-i18n="h-top-r">Rome, Italy</span>
+  </div>
+  <div class="hero-name-block">
+    <h1 class="hero-name" id="heroTitle">
+      <span data-i18n="h-title-1">Rome</span>
+      <em data-i18n="h-title-2">on film.</em>
+    </h1>
+    <div class="hero-name-right">
+      <div class="price-summary" data-i18n-html="h-price">
+        <strong>€50</strong> per image · <strong>€200</strong> for five images<span class="note">Licensed for up to one year of use — other terms available on request.</span>
+      </div>
+      <a href="#work" class="buy-link"><span data-i18n="h-buy">Browse &amp; License</span><span class="arrow">→</span></a>
+    </div>
+  </div>
+  <div class="hero-infobar">
+    <p class="hero-lede" data-i18n="h-lede">A licensed archive of ancient ruins, baroque fountains and Roman street life — every frame shot on 35mm and available for editorial, commercial and interior use.</p>
+  </div>
+  <div class="hero-image-block">
+    <img src="images/rome-09.jpg" alt="Neptune at the Trevi, Rome" draggable="false" />
+  </div>
+</section>
+
+<div class="divider-row reveal">
+  <span class="divider-label" data-i18n="div1-label">The Archive</span>
+  <span class="divider-rule"></span>
+  <span class="divider-meta" data-i18n="div1-meta">19 frames · Click to license</span>
+</div>
+
+<section class="gallery" id="work"></section>
+
+<section class="pricing-full reveal" id="pricing">
+  <div class="pricing-header">
+    <span class="section-eyebrow" data-i18n="pr-label">Licensing</span>
+    <h2 data-i18n-html="pr-h">Priced for <em>every scale</em></h2>
+    <p data-i18n="pr-sub">From a single editorial image to a full brand campaign — all use cases covered.</p>
+  </div>
+  <div class="pricing-grid">
+    <div class="price-card">
+      <span class="pc-tier" data-i18n="tier-1">Single</span>
+      <div class="pc-price">€50</div>
+      <div class="pc-desc" data-i18n="desc-1">1 image · licensed for up to 1 year</div>
+    </div>
+    <div class="price-card pc-featured">
+      <span class="pc-tier" data-i18n="tier-2">Bundle</span>
+      <div class="pc-price">€200</div>
+      <div class="pc-desc" data-i18n="desc-2">5 images · licensed for up to 1 year</div>
+    </div>
+    <div class="price-card">
+      <span class="pc-tier" data-i18n="tier-3">Studio</span>
+      <div class="pc-price">€350</div>
+      <div class="pc-desc" data-i18n="desc-3">10 images · licensed for up to 1 year</div>
+    </div>
+    <div class="price-card">
+      <span class="pc-tier" data-i18n="tier-4">Archive</span>
+      <div class="pc-price" data-i18n="price-4">On request</div>
+      <div class="pc-desc" data-i18n="desc-4">Full archive · terms on request</div>
+    </div>
+  </div>
+  <p class="pricing-note-text" data-i18n="pr-note">All licenses include full-resolution digital files — ideal for web, social media, editorial and interior use. Extended or exclusive rights available on request.</p>
+  <div class="use-cases">
+    <span data-i18n="uc-1">Hotels &amp; Boutique Stays</span>
+    <span data-i18n="uc-2">Travel Editorial</span>
+    <span data-i18n="uc-3">Brand Campaigns</span>
+    <span data-i18n="uc-4">Interior Design</span>
+    <span data-i18n="uc-5">Print Media</span>
+  </div>
+</section>
+
+<section class="process-section reveal">
+  <span class="section-eyebrow" data-i18n="proc-label">How it works</span>
+  <div class="process-grid">
+    <div class="process-step">
+      <span class="process-step-no">01</span>
+      <h3 data-i18n="proc-1-h">Browse the archive</h3>
+      <p data-i18n="proc-1-p">Note the frame numbers of the images you want — each is available for immediate licensing.</p>
+    </div>
+    <div class="process-step">
+      <span class="process-step-no">02</span>
+      <h3 data-i18n="proc-2-h">Send an inquiry</h3>
+      <p data-i18n="proc-2-p">Tell me which images, your intended use, and for how long. I will confirm and send a quote within 24 hours.</p>
+    </div>
+    <div class="process-step">
+      <span class="process-step-no">03</span>
+      <h3 data-i18n="proc-3-h">Receive files &amp; agreement</h3>
+      <p data-i18n="proc-3-p">High-resolution files and a signed license agreement delivered within 48 hours of confirmation.</p>
+    </div>
+  </div>
+</section>
+
+<section class="about-section reveal">
+  <span class="section-eyebrow" data-i18n="ab-label">The Photographer</span>
+  <div>
+    <h2>Sille <em>Fejerskov</em></h2>
+    <p data-i18n="ab-p1">Danish photographer shooting exclusively on 35mm film. The archive focuses on Southern Europe — Sicily and Rome — capturing light, texture and everyday life in analogue. Every frame is hand-developed and scanned to high resolution.</p>
+    <p data-i18n="ab-p2">Available for licensing to hotels, travel brands, editorial publications and interior designers. Custom shoots and exclusive rights available on request.</p>
+    <a href="https://www.instagram.com/sillefejerskov/" class="insta-link" target="_blank" rel="noopener noreferrer">
+      <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+      @sillefejerskov
+    </a>
+  </div>
+</section>
+
+<section class="contact reveal" id="contact">
+  <h2><span data-i18n="con-h1">Ready to</span> <em data-i18n="con-h2">license?</em></h2>
+  <p data-i18n="con-p">Get in touch for licensing details, exclusive rights, special pricing or full archive access. Replies within 24 hours.</p>
+  <a href="mailto:sille.m.fejerskov@gmail.com" class="contact-email">sille.m.fejerskov@gmail.com</a>
+  <div id="contactFormWrap" class="contact-form-wrap">
+    <form id="contactForm" novalidate>
+      <div class="form-row"><label class="form-label" for="cf-name" data-i18n="f-name">Name</label><input class="form-field" type="text" id="cf-name" name="name" required autocomplete="name" /></div>
+      <div class="form-row"><label class="form-label" for="cf-email" data-i18n="f-email">Email</label><input class="form-field" type="email" id="cf-email" name="email" required autocomplete="email" /></div>
+      <div class="form-row"><label class="form-label" for="cf-msg" data-i18n="f-msg">Message</label><textarea class="form-field form-textarea" id="cf-msg" name="message" rows="4" required></textarea></div>
+      <p class="form-error" id="formError" data-i18n="f-error">Something went wrong — please try again.</p>
+      <button class="form-submit" type="submit" id="formSubmit"><span data-i18n="f-submit">Send Inquiry</span></button>
+    </form>
+    <div id="formSuccess" class="form-success" style="display:none"><p data-i18n="f-success">Thank you — I will get back to you within 24 hours.</p></div>
+  </div>
+</section>
+
+<footer>
+  <div class="brand-small">35mm Archive</div>
+  <div data-i18n="ft-copy">© 2026 — All Images Protected</div>
+  <div style="display:flex;align-items:center;gap:22px;">
+    <a href="https://www.instagram.com/sillefejerskov/" class="footer-insta" target="_blank" rel="noopener noreferrer">@sillefejerskov</a>
+    <span data-i18n="ft-tech">Shot On 35mm · Rome, Italy</span>
+  </div>
+</footer>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true">
+  <div class="modal-inner">
+    <button class="modal-close" id="modalClose" aria-label="Close">×</button>
+    <div class="modal-eye" data-i18n="mod-eye">License Inquiry</div>
+    <div class="modal-title" id="modalTitle">—</div>
+    <div class="modal-sub" id="modalSub">—</div>
+    <div class="price-block">
+      <div class="price-row"><span class="desc" data-i18n="mod-desc1">Single image</span><span class="amt">€50</span></div>
+      <div class="price-row"><span class="desc" data-i18n="mod-desc2">Bundle of five</span><span class="amt">€200</span></div>
+    </div>
+    <div class="modal-special" data-i18n="mod-special">Need something else? Mention it in your message.</div>
+    <a href="#" class="inq-btn" id="inquiryBtn" data-i18n="mod-btn">Send Inquiry</a>
+  </div>
+</div>
+
+<script>
+const PHOTOS = [
+  { src:'rome-14.jpg', ratio:'3/2', w:68,  x: 0.0, cat:{en:'Landscape',   it:'Paesaggio'},     title:{en:'The Dome Through the Trees',      it:'La Cupola tra gli Alberi'} },
+  { src:'rome-15.jpg', ratio:'2/3', w:34,  x: 4.0, cat:{en:'Landscape',   it:'Paesaggio'},     title:{en:'Gardens of the Vatican',          it:'Giardini del Vaticano'} },
+  { src:'rome-01.jpg', ratio:'3/2', w:59,  x:-2.0, cat:{en:'Street',      it:'Strada'},        title:{en:'Water at the Nasone',             it:'Acqua alla Nasone'} },
+  { src:'rome-02.jpg', ratio:'3/2', w:69,  x: 0.0, cat:{en:'Street',      it:'Strada'},        title:{en:'Roman Speed',                     it:'Velocità Romana'} },
+  { src:'rome-03.jpg', ratio:'2/3', w:32,  x:-4.0, cat:{en:'Architecture',it:'Architettura'},  title:{en:'Entrance to the Vatican Museums', it:'Ingresso ai Musei Vaticani'} },
+  { src:'rome-04.jpg?v=2', ratio:'2/3', w:35,  x: 5.0, cat:{en:'Sculpture',   it:'Scultura'},      title:{en:'In the Church',                   it:'In Chiesa'} },
+  { src:'rome-05.jpg', ratio:'3/2', w:54,  x: 3.5, cat:{en:'Café',        it:'Caffè'},         title:{en:'Cappuccino and Playing Cards',     it:'Cappuccino e Carte da Gioco'} },
+  { src:'rome-07.jpg', ratio:'3/2', w:66,  x:-1.5, cat:{en:'Architecture',it:'Architettura'},  title:{en:'Fountain of the Four Rivers',      it:'Fontana dei Quattro Fiumi'} },
+  { src:'rome-08.jpg', ratio:'3/2', w:60,  x: 2.0, cat:{en:'Architecture',it:'Architettura'},  title:{en:'Trevi Fountain',                  it:'Fontana di Trevi'} },
+  { src:'rome-09.jpg', ratio:'3/2', w:72,  x: 0.0, cat:{en:'Architecture',it:'Architettura'},  title:{en:'Neptune at the Trevi',            it:'Nettuno alla Fontana di Trevi'} },
+  { src:'rome-10.jpg', ratio:'2/3', w:31,  x:-4.0, cat:{en:'Street',      it:'Strada'},        title:{en:'A Roman City Car',                it:'Una City Car Romana'} },
+  { src:'rome-12.jpg', ratio:'3/2', w:57,  x: 3.0, cat:{en:'Street',      it:'Strada'},        title:{en:'The Street Musician',             it:'Il Musicista di Strada'} },
+  { src:'rome-13.jpg', ratio:'3/2', w:63,  x:-2.5, cat:{en:'Square',      it:'Piazza'},        title:{en:'Lunch in a Hidden Piazza',        it:'Pranzo in una Piazza Nascosta'} },
+  { src:'rome-16.jpg', ratio:'3/2', w:51,  x: 4.5, cat:{en:'Market',      it:'Mercato'},       title:{en:'Carciofi alla Romana',            it:'Carciofi alla Romana'} },
+  { src:'rome-17.jpg', ratio:'3/2', w:65,  x:-0.5, cat:{en:'Architecture',it:'Architettura'},  title:{en:'Inside the Colosseum',            it:'Dentro il Colosseo'} },
+  { src:'rome-18.jpg', ratio:'3/2', w:71,  x: 0.0, cat:{en:'Architecture',it:'Architettura'},  title:{en:'The Arena',                       it:"L'Arena"} },
+  { src:'rome-19.jpg', ratio:'3/2', w:62,  x: 2.5, cat:{en:'Architecture',it:'Architettura'},  title:{en:'The Roman Forum',                 it:'Il Foro Romano'} },
+  { src:'rome-20.jpg', ratio:'3/2', w:56,  x:-3.5, cat:{en:'Architecture',it:'Architettura'},  title:{en:'Rome by Night',                   it:'Roma di Notte'} },
+  { src:'rome-21.jpg', ratio:'3/2', w:53,  x: 1.5, cat:{en:'Food',        it:'Cucina'},        title:{en:'Gnocchi',                         it:'Gnocchi'} },
+];
+
+const T = {
+  en: {
+    'masthead-l':'Vol. II · Rome · 35mm','nav-work':'Work','nav-license':'License','nav-sicily':'Sicily',
+    'h-top-l':'Edition 2024 — 2026','h-top-c':'Hand-scanned · Licensed archive','h-top-r':'Rome, Italy',
+    'h-title-1':'Rome','h-title-2':'on film.',
+    'h-lede':'A licensed archive of ancient ruins, baroque fountains and Roman street life — every frame shot on 35mm and available for editorial, commercial and interior use.',
+    'h-price':'<strong>€50</strong> per image · <strong>€200</strong> for five images<span class="note">Licensed for up to one year of use — other terms available on request.</span>',
+    'h-buy':'Browse & License','price-per':'License',
+    'div1-label':'The Archive','div1-meta':'19 frames · Click to license','ov-label':'License',
+    'con-h1':'Ready to','con-h2':'license?','con-p':'Get in touch for licensing details, exclusive rights, special pricing or full archive access. Replies within 24 hours.',
+    'ft-copy':'© 2026 — All Images Protected','ft-tech':'Shot On 35mm · Rome, Italy',
+    'mod-eye':'License Inquiry','mod-desc1':'Single image','mod-desc2':'Bundle of five','mod-special':'Need something else? Mention it in your message.','mod-btn':'Send Inquiry',
+    'cta-btn':'Get in touch','f-name':'Name','f-email':'Email','f-msg':'Message','f-placeholder':'What are you looking for?',
+    'f-submit':'Send Inquiry','f-error':'Something went wrong — please try again.','f-success':'Thank you — I will get back to you within 24 hours.',
+    'pr-label':'Licensing','pr-h':'Priced for <em>every scale</em>','pr-sub':'From a single editorial image to a full brand campaign — all use cases covered.',
+    'tier-1':'Single','tier-2':'Bundle','tier-3':'Studio','tier-4':'Archive',
+    'desc-1':'1 image · licensed for up to 1 year','desc-2':'5 images · licensed for up to 1 year','desc-3':'10 images · licensed for up to 1 year','desc-4':'Full archive · terms on request','price-4':'On request',
+    'pr-note':'All licenses include full-resolution digital files — ideal for web, social media, editorial and interior use. Extended or exclusive rights available on request.',
+    'uc-1':'Hotels & Boutique Stays','uc-2':'Travel Editorial','uc-3':'Brand Campaigns','uc-4':'Interior Design','uc-5':'Print Media',
+    'proc-label':'How it works','proc-1-h':'Browse the archive','proc-1-p':'Note the frame numbers of the images you want — each is available for immediate licensing.','proc-2-h':'Send an inquiry','proc-2-p':'Tell me which images, your intended use, and for how long. I will confirm and send a quote within 24 hours.','proc-3-h':'Receive files & agreement','proc-3-p':'High-resolution files and a signed license agreement delivered within 48 hours of confirmation.',
+    'ab-label':'The Photographer','ab-p1':'Danish photographer shooting exclusively on 35mm film. The archive focuses on Southern Europe — Sicily and Rome — capturing light, texture and everyday life in analogue. Every frame is hand-developed and scanned to high resolution.','ab-p2':'Available for licensing to hotels, travel brands, editorial publications and interior designers. Custom shoots and exclusive rights available on request.',
+  },
+  it: {
+    'masthead-l':'Vol. II · Roma · 35mm','nav-work':'Lavori','nav-license':'Licenza','nav-sicily':'Sicilia',
+    'h-top-l':'Edizione 2024 — 2026','h-top-c':'Scansionato a mano · Archivio con licenza','h-top-r':'Roma, Italia',
+    'h-title-1':'Roma','h-title-2':'in pellicola.',
+    'h-lede':"Un archivio con licenza di rovine antiche, fontane barocche e vita di strada romana — ogni fotogramma su pellicola 35mm, disponibile per uso editoriale, commerciale e d'interni.",
+    'h-price':'<strong>€50</strong> per immagine · <strong>€200</strong> per cinque immagini<span class="note">Licenza valida fino a un anno — altri termini disponibili su richiesta.</span>',
+    'h-buy':'Sfoglia e Acquista','price-per':'Acquista',
+    'div1-label':"L'Archivio",'div1-meta':'19 fotogrammi · Clicca per acquistare','ov-label':'Acquista',
+    'con-h1':'Pronta per','con-h2':'la licenza?','con-p':"Contattami per dettagli sulla licenza, diritti esclusivi, prezzi speciali o accesso all'archivio completo. Risposta entro 24 ore.",
+    'ft-copy':'© 2026 — Tutti i Diritti Riservati','ft-tech':'Scattato su 35mm · Roma, Italia',
+    'mod-eye':'Richiesta di Licenza','mod-desc1':'Immagine singola','mod-desc2':'Pacchetto di cinque','mod-special':'Hai bisogno di altro? Menzionalo nel messaggio.','mod-btn':'Invia Richiesta',
+    'cta-btn':'Scrivimi','f-name':'Nome','f-email':'Email','f-msg':'Messaggio','f-placeholder':'Cosa stai cercando?',
+    'f-submit':'Invia','f-error':'Qualcosa è andato storto — riprova.','f-success':'Grazie — Ti risponderò entro 24 ore.',
+    'pr-label':'Licenze','pr-h':'Prezzi per <em>ogni esigenza</em>','pr-sub':"Da una singola immagine editoriale a una campagna completa — tutti i casi d'uso coperti.",
+    'tier-1':'Singola','tier-2':'Bundle','tier-3':'Studio','tier-4':'Archivio',
+    'desc-1':'1 immagine · licenza fino a 1 anno','desc-2':'5 immagini · licenza fino a 1 anno','desc-3':'10 immagini · licenza fino a 1 anno','desc-4':'Archivio completo · termini su richiesta','price-4':'Su richiesta',
+    'pr-note':'Tutte le licenze includono file digitali ad alta risoluzione — ideali per web, social media, editoriale e uso d\'interni. Diritti estesi o esclusivi disponibili su richiesta.',
+    'uc-1':'Hotel e Soggiorni','uc-2':'Editoriale di Viaggio','uc-3':'Campagne di Brand','uc-4':'Interior Design','uc-5':'Stampa',
+    'proc-label':'Come funziona','proc-1-h':"Sfoglia l'archivio",'proc-1-p':'Nota i numeri di fotogramma delle immagini che vuoi — ognuna è disponibile per la concessione immediata della licenza.','proc-2-h':'Invia una richiesta','proc-2-p':'Dimmi quali immagini, il tuo uso previsto e per quanto tempo. Confermerò e invierò un preventivo entro 24 ore.','proc-3-h':'Ricevi file e contratto','proc-3-p':'File ad alta risoluzione e accordo di licenza firmato consegnati entro 48 ore dalla conferma.',
+    'ab-label':'La Fotografa','ab-p1':'Fotografa danese che scatta esclusivamente su pellicola 35mm. L\'archivio si concentra sull\'Europa meridionale — Sicilia e Roma — catturando luce, texture e vita quotidiana in analogico. Ogni fotogramma è sviluppato e scansionato ad alta risoluzione.','ab-p2':'Disponibile per la concessione di licenze a hotel, brand di viaggio, pubblicazioni editoriali e interior designer. Riprese personalizzate e diritti esclusivi disponibili su richiesta.',
+  }
+};
+
+let lang = 'en';
+
+const gallery = document.getElementById('work');
+PHOTOS.forEach((p, i) => {
+  const num = String(i + 1).padStart(2, '0');
+  const wrap = document.createElement('div');
+  wrap.className = 'photo-wrap reveal';
+  wrap.style.cssText = `--x:${p.x}%;width:${p.w}%`;
+  wrap.innerHTML = `
+    <figure class="photo"
+      data-location-en="Rome, Italy" data-location-it="Roma, Italia"
+      data-category-en="${p.cat.en}" data-category-it="${p.cat.it}"
+      data-title-en="${p.title.en}" data-title-it="${p.title.it}">
+      <img src="images/${p.src}" alt="${p.title.en}" loading="lazy"/>
+      <div class="frame-no">N° ${num}</div>
+      <div class="price-tag"><span class="amount">€50</span><span class="per" data-i18n="price-per">License</span></div>
+      <div class="watermark"><span>© Sille Fejerskov · Preview</span></div>
+      <div class="photo-overlay">
+        <svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="1"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+        <div class="ov-label" data-i18n="ov-label">License</div>
+        <div class="ov-loc">Rome, Italy</div>
+      </div>
+    </figure>
+    <div class="caption-strip">
+      <span class="cap-num">N° ${num} / <span class="cap-cat">${p.cat.en}</span></span>
+      <span class="cap-rule"></span>
+      <span class="cap-title">${p.title.en}</span>
+    </div>`;
+  gallery.appendChild(wrap);
+});
+
+function setLang(l) {
+  lang = l;
+  document.getElementById('html').lang = l;
+  document.querySelectorAll('[data-i18n]').forEach(el => { if (T[l][el.dataset.i18n]) el.textContent = T[l][el.dataset.i18n]; });
+  document.querySelectorAll('[data-i18n-html]').forEach(el => { if (T[l][el.dataset.i18nHtml]) el.innerHTML = T[l][el.dataset.i18nHtml]; });
+  document.querySelectorAll('figure.photo').forEach(fig => {
+    const ol = fig.querySelector('.ov-loc');
+    if (ol) ol.textContent = l === 'it' ? fig.dataset.locationIt : fig.dataset.locationEn;
+  });
+  document.querySelectorAll('.photo-wrap').forEach(w => {
+    const fig = w.querySelector('figure.photo');
+    const cat = w.querySelector('.cap-cat');
+    const ttl = w.querySelector('.cap-title');
+    if (fig && cat) cat.textContent = l === 'it' ? fig.dataset.categoryIt : fig.dataset.categoryEn;
+    if (fig && ttl) ttl.textContent = l === 'it' ? fig.dataset.titleIt : fig.dataset.titleEn;
+  });
+  const ta = document.getElementById('cf-msg');
+  if (ta) ta.placeholder = T[l]['f-placeholder'];
+  document.getElementById('langBtn').textContent = l === 'en' ? 'IT' : 'EN';
+}
+document.getElementById('langBtn').addEventListener('click', () => setLang(lang === 'en' ? 'it' : 'en'));
+
+document.addEventListener('contextmenu', e => e.preventDefault());
+document.addEventListener('dragstart', e => { if (e.target.tagName === 'IMG') e.preventDefault(); });
+
+
+const revealObs = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in-view'); revealObs.unobserve(e.target); } }), {threshold:0.08});
+document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+const modal = document.getElementById('modal');
+const modalTitle = document.getElementById('modalTitle');
+const modalSub = document.getElementById('modalSub');
+const inquiryBtn = document.getElementById('inquiryBtn');
+document.querySelectorAll('figure.photo').forEach(p => {
+  p.addEventListener('click', () => {
+    const title    = lang==='it' ? p.dataset.titleIt    : p.dataset.titleEn;
+    const location = lang==='it' ? p.dataset.locationIt : p.dataset.locationEn;
+    const category = lang==='it' ? p.dataset.categoryIt : p.dataset.categoryEn;
+    modalTitle.textContent = title;
+    modalSub.textContent = `${location} · ${category}`;
+    const subj = encodeURIComponent(`${lang==='it'?'Richiesta di licenza':'License inquiry'} — ${title}`);
+    const body = lang==='it' ? encodeURIComponent(`Ciao Sille,\n\nVorrei acquistare la licenza per:\n• ${title}\n• ${location} · ${category}\n\nGrazie.`) : encodeURIComponent(`Hi Sille,\n\nI'd like to license:\n• ${title}\n• ${location} · ${category}\n\nThank you.`);
+    inquiryBtn.href = `mailto:sille.m.fejerskov@gmail.com?subject=${subj}&body=${body}`;
+    modal.classList.add('open'); document.body.style.overflow='hidden';
+  });
+});
+function closeModal() { modal.classList.remove('open'); document.body.style.overflow=''; }
+document.getElementById('modalClose').addEventListener('click', closeModal);
+modal.addEventListener('click', e => { if (e.target===modal) closeModal(); });
+document.addEventListener('keydown', e => { if (e.key==='Escape') closeModal(); });
+
+const FORMSPREE = 'https://formspree.io/f/xjgjrwel';
+const contactForm = document.getElementById('contactForm');
+document.getElementById('cf-msg').placeholder = T[lang]['f-placeholder'];
+contactForm.addEventListener('submit', async e => {
+  e.preventDefault();
+  document.getElementById('formError').style.display='none';
+  const btn = document.getElementById('formSubmit'); btn.disabled=true;
+  try {
+    const res = await fetch(FORMSPREE, {method:'POST',body:new FormData(contactForm),headers:{'Accept':'application/json'}});
+    if (res.ok) { contactForm.style.display='none'; document.getElementById('formSuccess').style.display='block'; }
+    else { document.getElementById('formError').style.display='block'; btn.disabled=false; }
+  } catch { document.getElementById('formError').style.display='block'; btn.disabled=false; }
+});
+</script>
+</body>
+</html>
