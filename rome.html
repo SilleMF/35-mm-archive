@@ -12,14 +12,21 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-8858YH9JF0"></script>
+<!-- Google Analytics (loaded only after cookie consent) -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-8858YH9JF0');
+  function loadGA() {
+    if (window.__gaLoaded) return;
+    window.__gaLoaded = true;
+    const s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-8858YH9JF0';
+    document.head.appendChild(s);
+    gtag('js', new Date());
+    gtag('config', 'G-8858YH9JF0', { anonymize_ip: true });
+  }
+  if (localStorage.getItem('cookieConsent') === 'accepted') loadGA();
 </script>
 <style>
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -107,7 +114,20 @@ figure.photo:hover .photo-overlay { opacity: 1; }
 .form-success { padding: 56px 0 24px; font-family: 'Playfair Display', serif; font-size: clamp(20px, 2.2vw, 26px); font-style: italic; line-height: 1.5; color: #1c1c1c; text-align: center; }
 
 /* ─── FOOTER + MODAL ─── */
-footer { padding: 40px 52px; border-top: 1px solid rgba(0,0,0,.09); display: flex; justify-content: space-between; align-items: center; font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase; color: #3a3934; }
+footer { padding: 40px 52px; border-top: 1px solid rgba(0,0,0,.09); display: flex; justify-content: space-between; align-items: center; font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase; color: #3a3934; flex-wrap: wrap; gap: 14px; }
+.footer-legal { color: #3a3934; text-decoration: none; transition: color .25s; }
+.footer-legal:hover { color: #1c1c1c; }
+
+/* Cookie banner */
+.cookie-banner { position: fixed; bottom: 18px; left: 18px; right: 18px; max-width: 720px; margin: 0 auto; z-index: 200; background: #1c1c1c; color: #f9f8f5; padding: 22px 26px; display: none; align-items: center; gap: 22px; flex-wrap: wrap; box-shadow: 0 18px 40px -12px rgba(0,0,0,.5); }
+.cookie-banner.show { display: flex; }
+.cookie-banner p { font-size: 13px; line-height: 1.55; color: rgba(249,248,245,.85); flex: 1 1 280px; margin: 0; font-family: 'Jost', sans-serif; }
+.cookie-banner a { color: #f9f8f5; text-decoration: underline; text-underline-offset: 3px; }
+.cookie-actions { display: flex; gap: 10px; flex-shrink: 0; }
+.cookie-btn { font-family: 'Jost', sans-serif; font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase; padding: 11px 22px; border: 1px solid rgba(249,248,245,.4); background: transparent; color: #f9f8f5; cursor: pointer; transition: background .25s, color .25s; }
+.cookie-btn:hover { background: rgba(249,248,245,.1); }
+.cookie-btn--primary { background: #f9f8f5; color: #1c1c1c; border-color: #f9f8f5; }
+.cookie-btn--primary:hover { background: rgba(249,248,245,.88); color: #1c1c1c; }
 .brand-small { font-family: 'Playfair Display', serif; text-transform: uppercase; letter-spacing: 3px; font-size: 13px; font-weight: 500; color: #1c1c1c; }
 .modal { position: fixed; inset: 0; background: rgba(20,18,12,.55); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); display: none; align-items: center; justify-content: center; z-index: 200; padding: 40px 20px; }
 .modal.open { display: flex; }
@@ -186,6 +206,9 @@ footer { padding: 40px 52px; border-top: 1px solid rgba(0,0,0,.09); display: fle
   .contact { padding: 80px 24px 100px; }
   .modal-inner { padding: 40px 28px; } .modal-title { font-size: 30px; }
   footer { flex-direction: column; gap: 10px; text-align: center; padding: 28px 20px; }
+  .cookie-banner { left: 12px; right: 12px; bottom: 12px; padding: 18px 18px; gap: 14px; }
+  .cookie-actions { width: 100%; }
+  .cookie-btn { flex: 1; padding: 12px 10px; }
   .pricing-full { padding: 80px 24px 60px; }
   .pricing-grid { grid-template-columns: 1fr 1fr; }
   .price-card { border-right: none; border-bottom: 1px solid rgba(0,0,0,.12); }
@@ -339,11 +362,20 @@ footer { padding: 40px 52px; border-top: 1px solid rgba(0,0,0,.09); display: fle
 <footer>
   <div class="brand-small">35mm Archive</div>
   <div data-i18n="ft-copy">© 2026 — All Images Protected</div>
-  <div style="display:flex;align-items:center;gap:22px;">
+  <div style="display:flex;align-items:center;gap:22px;flex-wrap:wrap;">
+    <a href="privacy.html" class="footer-legal" data-i18n="ft-privacy">Privacy</a>
     <a href="https://www.instagram.com/sillefejerskov/" class="footer-insta" target="_blank" rel="noopener noreferrer">@sillefejerskov</a>
     <span data-i18n="ft-tech">Shot On 35mm · Rome, Italy</span>
   </div>
 </footer>
+
+<div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Cookie consent">
+  <p data-i18n-html="cookie-text">This site uses anonymised analytics to understand how it is used. Nothing is loaded until you choose. <a href="privacy.html">Privacy policy</a>.</p>
+  <div class="cookie-actions">
+    <button class="cookie-btn" id="cookieDecline" data-i18n="cookie-decline">Decline</button>
+    <button class="cookie-btn cookie-btn--primary" id="cookieAccept" data-i18n="cookie-accept">Accept</button>
+  </div>
+</div>
 
 <div class="modal" id="modal" role="dialog" aria-modal="true">
   <div class="modal-inner">
@@ -392,7 +424,8 @@ const T = {
     'h-buy':'Browse & License','price-per':'License',
     'div1-label':'The Archive','div1-meta':'19 frames · Click to license','ov-label':'License',
     'con-h1':'Ready to','con-h2':'license?','con-p':'Get in touch for licensing details, exclusive rights, special pricing or full archive access. Replies within 24 hours.',
-    'ft-copy':'© 2026 — All Images Protected','ft-tech':'Shot On 35mm · Rome, Italy',
+    'ft-copy':'© 2026 — All Images Protected','ft-tech':'Shot On 35mm · Rome, Italy','ft-privacy':'Privacy',
+    'cookie-text':'This site uses anonymised analytics to understand how it is used. Nothing is loaded until you choose. <a href="privacy.html">Privacy policy</a>.','cookie-accept':'Accept','cookie-decline':'Decline',
     'mod-eye':'License Inquiry','mod-desc1':'Single image','mod-desc2':'Bundle of three','mod-special':'Need something else? Mention it in your message.','mod-btn':'Send Inquiry',
     'cta-btn':'Get in touch','f-name':'Name','f-email':'Email','f-msg':'Message','f-placeholder':'What are you looking for?',
     'f-submit':'Send Inquiry','f-error':'Something went wrong — please try again.','f-success':'Thank you — I will get back to you within 24 hours.',
@@ -413,7 +446,8 @@ const T = {
     'h-buy':'Sfoglia e Acquista','price-per':'Acquista',
     'div1-label':"L'Archivio",'div1-meta':'19 fotogrammi · Clicca per acquistare','ov-label':'Acquista',
     'con-h1':'Pronta per','con-h2':'la licenza?','con-p':"Contattami per dettagli sulla licenza, diritti esclusivi, prezzi speciali o accesso all'archivio completo. Risposta entro 24 ore.",
-    'ft-copy':'© 2026 — Tutti i Diritti Riservati','ft-tech':'Scattato su 35mm · Roma, Italia',
+    'ft-copy':'© 2026 — Tutti i Diritti Riservati','ft-tech':'Scattato su 35mm · Roma, Italia','ft-privacy':'Privacy',
+    'cookie-text':'Questo sito usa analytics anonimi per capire come viene utilizzato. Nulla viene caricato finché non scegli. <a href="privacy.html">Privacy policy</a>.','cookie-accept':'Accetta','cookie-decline':'Rifiuta',
     'mod-eye':'Richiesta di Licenza','mod-desc1':'Immagine singola','mod-desc2':'Pacchetto di tre','mod-special':'Hai bisogno di altro? Menzionalo nel messaggio.','mod-btn':'Invia Richiesta',
     'cta-btn':'Scrivimi','f-name':'Nome','f-email':'Email','f-msg':'Messaggio','f-placeholder':'Cosa stai cercando?',
     'f-submit':'Invia','f-error':'Qualcosa è andato storto — riprova.','f-success':'Grazie — Ti risponderò entro 24 ore.',
@@ -508,6 +542,18 @@ function closeModal() { modal.classList.remove('open'); document.body.style.over
 document.getElementById('modalClose').addEventListener('click', closeModal);
 modal.addEventListener('click', e => { if (e.target===modal) closeModal(); });
 document.addEventListener('keydown', e => { if (e.key==='Escape') closeModal(); });
+
+const cookieBanner = document.getElementById('cookieBanner');
+if (!localStorage.getItem('cookieConsent')) cookieBanner.classList.add('show');
+document.getElementById('cookieAccept').addEventListener('click', () => {
+  localStorage.setItem('cookieConsent', 'accepted');
+  cookieBanner.classList.remove('show');
+  if (typeof loadGA === 'function') loadGA();
+});
+document.getElementById('cookieDecline').addEventListener('click', () => {
+  localStorage.setItem('cookieConsent', 'declined');
+  cookieBanner.classList.remove('show');
+});
 
 const FORMSPREE = 'https://formspree.io/f/xjgjrwel';
 const contactForm = document.getElementById('contactForm');
