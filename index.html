@@ -182,7 +182,7 @@ footer { padding: 40px 52px; border-top: 1px solid rgba(0,0,0,.09); display: fle
 .pricing-header h2 { font-family: 'Playfair Display', serif; font-size: clamp(36px, 5vw, 68px); font-weight: 500; text-transform: uppercase; letter-spacing: -1px; line-height: .95; margin-bottom: 22px; }
 .pricing-header h2 em { font-style: italic; font-weight: 400; text-transform: none; color: #2a2a25; }
 .pricing-header p { max-width: 44ch; margin: 0 auto; color: #3a3934; font-size: 16px; line-height: 1.65; }
-.pricing-grid { display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid rgba(0,0,0,.12); margin-bottom: 48px; align-items: stretch; }
+.pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid rgba(0,0,0,.12); margin-bottom: 48px; align-items: stretch; }
 .price-card { padding: 48px 36px 52px; border-right: 1px solid rgba(0,0,0,.12); display: flex; flex-direction: column; }
 .price-card:last-child { border-right: none; }
 .price-card.pc-featured { background: #1c1c1c; color: #f9f8f5; }
@@ -193,7 +193,8 @@ footer { padding: 40px 52px; border-top: 1px solid rgba(0,0,0,.09); display: fle
 .pc-featured .pc-desc { color: rgba(249,248,245,.65); }
 .pc-link { text-decoration: none; color: inherit; position: relative; transition: transform .3s ease, box-shadow .3s ease; }
 .pc-link:hover { transform: translateY(-3px); box-shadow: 0 18px 40px -20px rgba(0,0,0,.5); }
-.pc-cta { display: inline-flex; align-items: center; gap: 10px; margin-top: 24px; padding-top: 18px; border-top: 1px solid rgba(249,248,245,.18); font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: rgba(249,248,245,.95); }
+.pc-cta { display: inline-flex; align-items: center; gap: 10px; margin-top: 24px; padding-top: 18px; border-top: 1px solid rgba(0,0,0,.12); font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: #2a2a25; }
+.pc-featured .pc-cta { border-top-color: rgba(249,248,245,.18); color: rgba(249,248,245,.95); }
 .pc-cta .arrow { transition: transform .3s ease; }
 .pc-link:hover .pc-cta .arrow { transform: translateX(6px); }
 .pricing-note-text { text-align: center; font-family: 'Playfair Display', serif; font-style: italic; font-size: 14px; color: #3a3934; max-width: 62ch; margin: 0 auto 80px; line-height: 1.7; }
@@ -244,9 +245,8 @@ footer { padding: 40px 52px; border-top: 1px solid rgba(0,0,0,.09); display: fle
   footer { flex-direction: column; gap: 10px; text-align: center; padding: 28px 20px; }
   .city-tab { padding: 6px 18px; }
   .pricing-full { padding: 80px 24px 60px; }
-  .pricing-grid { grid-template-columns: 1fr 1fr; }
+  .pricing-grid { grid-template-columns: 1fr; }
   .price-card { border-right: none; border-bottom: 1px solid rgba(0,0,0,.12); }
-  .price-card:nth-child(odd) { border-right: 1px solid rgba(0,0,0,.12); }
   .price-card:last-child { border-bottom: none; }
   .use-cases { flex-direction: column; align-items: flex-start; padding: 28px 0; gap: 10px; }
   .use-cases span { border-left: none !important; padding: 4px 0; }
@@ -324,16 +324,12 @@ footer { padding: 40px 52px; border-top: 1px solid rgba(0,0,0,.09); display: fle
       <div class="pc-desc" data-i18n="desc-2">3 images · licensed for up to 1 year</div>
       <div class="pc-cta"><span data-i18n="pr-bundle-cta">Buy now</span><span class="arrow">→</span></div>
     </a>
-    <div class="price-card">
-      <span class="pc-tier" data-i18n="tier-3">Studio</span>
-      <div class="pc-price">€350</div>
-      <div class="pc-desc" data-i18n="desc-3">10 images · licensed for up to 1 year</div>
-    </div>
-    <div class="price-card">
-      <span class="pc-tier" data-i18n="tier-4">Archive</span>
+    <a href="#contact" class="price-card pc-link">
+      <span class="pc-tier" data-i18n="tier-4">Custom</span>
       <div class="pc-price" data-i18n="price-4">On request</div>
-      <div class="pc-desc" data-i18n="desc-4">Full archive · terms on request</div>
-    </div>
+      <div class="pc-desc" data-i18n="desc-4">Special pricing, full archive access or any other questions</div>
+      <div class="pc-cta"><span data-i18n="pr-custom-cta">Get in touch</span><span class="arrow">→</span></div>
+    </a>
   </div>
   <p class="pricing-note-text" data-i18n="pr-note">All licenses include full-resolution digital files — ideal for web, social media, editorial and interior use. Extended or exclusive rights available on request.</p>
   <div class="use-cases">
@@ -461,8 +457,8 @@ const T = {
     'cta-btn':'Get in touch','f-name':'Name','f-email':'Email','f-msg':'Message','f-placeholder':'What are you looking for?',
     'f-submit':'Send Inquiry','f-error':'Something went wrong — please try again.','f-success':'Thank you — I will get back to you within 24 hours.',
     'pr-label':'Licensing','pr-h':'Priced for <em>every scale</em>','pr-sub':'From a single editorial image to a full brand campaign — all use cases covered.',
-    'tier-1':'Single','tier-2':'Bundle','tier-3':'Studio','tier-4':'Archive',
-    'desc-1':'1 image · licensed for up to 1 year','desc-2':'3 images · licensed for up to 1 year','desc-3':'10 images · licensed for up to 1 year','desc-4':'Full archive · terms on request','price-4':'On request',
+    'tier-1':'Single','tier-2':'Bundle','tier-4':'Custom','pr-custom-cta':'Get in touch',
+    'desc-1':'1 image · licensed for up to 1 year','desc-2':'3 images · licensed for up to 1 year','desc-4':'Special pricing, full archive access or any other questions','price-4':'On request',
     'pr-note':'All licenses include full-resolution digital files — ideal for web, social media, editorial and interior use. Extended or exclusive rights available on request.',
     'uc-1':'Hotels & Boutique Stays','uc-2':'Travel Editorial','uc-3':'Brand Campaigns','uc-4':'Interior Design','uc-5':'Print Media',
     'proc-label':'How it works','proc-1-h':'Browse the archive','proc-1-p':'Note the frame numbers of the images you want — each is available for immediate licensing.','proc-2-h':'Send an inquiry','proc-2-p':'Tell me which images, your intended use, and for how long. I will confirm and send a quote within 24 hours.','proc-3-h':'Receive files & agreement','proc-3-p':'High-resolution files and a signed license agreement delivered within 48 hours of confirmation.',
@@ -482,8 +478,8 @@ const T = {
     'cta-btn':'Scrivimi','f-name':'Nome','f-email':'Email','f-msg':'Messaggio','f-placeholder':'Cosa stai cercando?',
     'f-submit':'Invia','f-error':'Qualcosa è andato storto — riprova.','f-success':'Grazie — Ti risponderò entro 24 ore.',
     'pr-label':'Licenze','pr-h':'Prezzi per <em>ogni esigenza</em>','pr-sub':"Da una singola immagine editoriale a una campagna completa — tutti i casi d'uso coperti.",
-    'tier-1':'Singola','tier-2':'Bundle','tier-3':'Studio','tier-4':'Archivio',
-    'desc-1':'1 immagine · licenza fino a 1 anno','desc-2':'3 immagini · licenza fino a 1 anno','desc-3':'10 immagini · licenza fino a 1 anno','desc-4':'Archivio completo · termini su richiesta','price-4':'Su richiesta',
+    'tier-1':'Singola','tier-2':'Bundle','tier-4':'Personalizzato','pr-custom-cta':'Contattami',
+    'desc-1':'1 immagine · licenza fino a 1 anno','desc-2':'3 immagini · licenza fino a 1 anno','desc-4':'Prezzi speciali, accesso completo all\'archivio o altre domande','price-4':'Su richiesta',
     'pr-note':'Tutte le licenze includono file digitali ad alta risoluzione — ideali per web, social media, editoriale e uso d\'interni. Diritti estesi o esclusivi disponibili su richiesta.',
     'uc-1':'Hotel e Soggiorni','uc-2':'Editoriale di Viaggio','uc-3':'Campagne di Brand','uc-4':'Interior Design','uc-5':'Stampa',
     'proc-label':'Come funziona','proc-1-h':"Sfoglia l'archivio",'proc-1-p':'Nota i numeri di fotogramma delle immagini che vuoi — ognuna è disponibile per la concessione immediata della licenza.','proc-2-h':'Invia una richiesta','proc-2-p':'Dimmi quali immagini, il tuo uso previsto e per quanto tempo. Confermerò e invierò un preventivo entro 24 ore.','proc-3-h':'Ricevi file e contratto','proc-3-p':'File ad alta risoluzione e accordo di licenza firmato consegnati entro 48 ore dalla conferma.',
