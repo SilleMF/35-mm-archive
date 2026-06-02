@@ -99,10 +99,12 @@ header {
 .price-summary { font-family: 'Playfair Display', serif; font-size: 14px; letter-spacing: 1.5px; line-height: 2; color: #3a3934; margin-bottom: 24px; }
 .price-summary strong { color: #1c1c1c; font-weight: 500; }
 .price-summary .note { display: block; font-style: italic; font-size: 13px; color: #3a3934; letter-spacing: .5px; line-height: 1.6; margin-top: 6px; }
-.buy-link { display: inline-flex; align-items: center; gap: 14px; padding: 18px 34px; background: #1c1c1c; color: #f9f8f5; text-decoration: none; font-size: 11px; letter-spacing: 3.5px; text-transform: uppercase; transition: background .3s ease; cursor: pointer; }
+.buy-link { display: inline-flex; align-items: center; gap: 14px; padding: 18px 34px; background: #1c1c1c; color: #f9f8f5; text-decoration: none; font-size: 11px; letter-spacing: 3.5px; text-transform: uppercase; transition: background .3s ease, color .3s ease, border-color .3s ease; cursor: pointer; }
 .buy-link:hover { background: #2a2a25; }
 .buy-link .arrow { transition: transform .3s ease; }
 .buy-link:hover .arrow { transform: translateX(6px); }
+.buy-link--ghost { background: transparent; color: #1c1c1c; border: 1px solid #1c1c1c; margin-top: 10px; }
+.buy-link--ghost:hover { background: #1c1c1c; color: #f9f8f5; }
 
 .hero-image-block { width: 100%; user-select: none; -webkit-user-select: none; }
 .hero-image-block img { width: 100%; height: auto; display: block; pointer-events: none; -webkit-user-drag: none; user-select: none; }
@@ -189,6 +191,11 @@ footer { padding: 40px 52px; border-top: 1px solid rgba(0,0,0,.09); display: fle
 .pc-price { font-family: 'Playfair Display', serif; font-size: clamp(26px, 3vw, 44px); font-weight: 500; margin-bottom: 16px; line-height: 1.1; }
 .pc-desc { font-size: 13px; line-height: 1.65; color: #3a3934; margin-top: auto; padding-top: 16px; }
 .pc-featured .pc-desc { color: rgba(249,248,245,.65); }
+.pc-link { text-decoration: none; color: inherit; position: relative; transition: transform .3s ease, box-shadow .3s ease; }
+.pc-link:hover { transform: translateY(-3px); box-shadow: 0 18px 40px -20px rgba(0,0,0,.5); }
+.pc-cta { display: inline-flex; align-items: center; gap: 10px; margin-top: 24px; padding-top: 18px; border-top: 1px solid rgba(249,248,245,.18); font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: rgba(249,248,245,.95); }
+.pc-cta .arrow { transition: transform .3s ease; }
+.pc-link:hover .pc-cta .arrow { transform: translateX(6px); }
 .pricing-note-text { text-align: center; font-family: 'Playfair Display', serif; font-style: italic; font-size: 14px; color: #3a3934; max-width: 62ch; margin: 0 auto 80px; line-height: 1.7; }
 .use-cases { display: flex; justify-content: center; flex-wrap: wrap; align-items: center; padding: 36px 0; border-top: 1px solid rgba(0,0,0,.09); border-bottom: 1px solid rgba(0,0,0,.09); }
 .use-cases span { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: #3a3934; padding: 6px 28px; }
@@ -280,6 +287,7 @@ footer { padding: 40px 52px; border-top: 1px solid rgba(0,0,0,.09); display: fle
         <strong>€40</strong> per image · <strong>€99</strong> for three images<span class="note">Licensed for up to one year of use — other terms available on request.</span>
       </div>
       <a href="#work" class="buy-link"><span data-i18n="h-buy">Browse &amp; License</span><span class="arrow">→</span></a>
+      <a href="https://buy.stripe.com/6oU8wS0nwbCs9s18L593y00" target="_blank" rel="noopener" class="buy-link buy-link--ghost"><span data-i18n="h-buy-bundle">Buy 3 for €99</span><span class="arrow">→</span></a>
     </div>
   </div>
   <div class="hero-infobar">
@@ -310,11 +318,12 @@ footer { padding: 40px 52px; border-top: 1px solid rgba(0,0,0,.09); display: fle
       <div class="pc-price">€40</div>
       <div class="pc-desc" data-i18n="desc-1">1 image · licensed for up to 1 year</div>
     </div>
-    <div class="price-card pc-featured">
+    <a href="https://buy.stripe.com/6oU8wS0nwbCs9s18L593y00" target="_blank" rel="noopener" class="price-card pc-featured pc-link">
       <span class="pc-tier" data-i18n="tier-2">Bundle</span>
       <div class="pc-price">€99</div>
       <div class="pc-desc" data-i18n="desc-2">3 images · licensed for up to 1 year</div>
-    </div>
+      <div class="pc-cta"><span data-i18n="pr-bundle-cta">Buy now</span><span class="arrow">→</span></div>
+    </a>
     <div class="price-card">
       <span class="pc-tier" data-i18n="tier-3">Studio</span>
       <div class="pc-price">€350</div>
@@ -444,7 +453,7 @@ const T = {
     'h-title-1':'Sicily','h-title-2':'on film.',
     'h-lede':'A licensed archive of sun-bleached coasts, baroque towns and Sicilian light — every frame shot on 35mm and available for editorial, commercial and interior use.',
     'h-price':'<strong>€40</strong> per image · <strong>€99</strong> for three images<span class="note">Licensed for up to one year of use — other terms available on request.</span>',
-    'h-buy':'Browse & License','price-per':'License',
+    'h-buy':'Browse & License','h-buy-bundle':'Buy 3 for €99','pr-bundle-cta':'Buy now','price-per':'License',
     'div1-label':'The Archive','div1-meta':'25 frames · Click to license','ov-label':'License',
     'con-h1':'Ready to','con-h2':'license?','con-p':'Get in touch for licensing details, exclusive rights, special pricing or full archive access. Replies within 24 hours.',
     'ft-copy':'© 2026 — All Images Protected','ft-tech':'Shot On 35mm · Sicily, Italy',
@@ -465,7 +474,7 @@ const T = {
     'h-title-1':'Sicilia','h-title-2':'in pellicola.',
     'h-lede':"Un archivio con licenza di coste sbiancate dal sole, borghi barocchi e luce siciliana — ogni fotogramma su pellicola 35mm, disponibile per uso editoriale, commerciale e d'interni.",
     'h-price':'<strong>€40</strong> per immagine · <strong>€99</strong> per tre immagini<span class="note">Licenza valida fino a un anno — altri termini disponibili su richiesta.</span>',
-    'h-buy':'Sfoglia e Acquista','price-per':'Acquista',
+    'h-buy':'Sfoglia e Acquista','h-buy-bundle':'Acquista 3 per €99','pr-bundle-cta':'Acquista ora','price-per':'Acquista',
     'div1-label':"L'Archivio",'div1-meta':'25 fotogrammi · Clicca per acquistare','ov-label':'Acquista',
     'con-h1':'Pronta per','con-h2':'la licenza?','con-p':"Contattami per dettagli sulla licenza, diritti esclusivi, prezzi speciali o accesso all'archivio completo. Risposta entro 24 ore.",
     'ft-copy':'© 2026 — Tutti i Diritti Riservati','ft-tech':'Scattato su 35mm · Sicilia, Italia',
