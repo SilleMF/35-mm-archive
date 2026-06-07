@@ -218,6 +218,16 @@ footer { padding: 40px 52px; border-top: 1px solid rgba(0,0,0,.09); display: fle
 .pc-cta .arrow { transition: transform .3s ease; }
 .pc-link:hover .pc-cta .arrow { transform: translateX(6px); }
 .pricing-note-text { text-align: center; font-family: 'Playfair Display', serif; font-style: italic; font-size: 14px; color: #3a3934; max-width: 62ch; margin: 0 auto 80px; line-height: 1.7; }
+
+.buy-notice { max-width: 720px; margin: 56px auto 40px; padding: 30px 38px; border: 1px solid rgba(0,0,0,.14); background: rgba(255,255,255,.55); }
+.buy-notice-eyebrow { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: #3a3934; margin-bottom: 14px; }
+.buy-notice-title { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 500; letter-spacing: -.3px; margin-bottom: 18px; line-height: 1.25; }
+.buy-notice-title em { font-style: italic; font-weight: 400; color: #2a2a25; }
+.buy-notice ul { list-style: none; padding: 0; margin: 0; }
+.buy-notice li { position: relative; padding-left: 22px; font-size: 14px; line-height: 1.7; color: #2a2a25; margin-bottom: 10px; }
+.buy-notice li::before { content: ''; position: absolute; left: 0; top: 12px; width: 10px; height: 1px; background: #1c1c1c; }
+.buy-notice li:last-child { margin-bottom: 0; }
+.buy-notice strong { font-weight: 400; color: #1c1c1c; }
 .use-cases { display: flex; justify-content: center; flex-wrap: wrap; align-items: center; padding: 36px 0; border-top: 1px solid rgba(0,0,0,.09); border-bottom: 1px solid rgba(0,0,0,.09); }
 .use-cases span { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: #3a3934; padding: 6px 28px; }
 .use-cases span + span { border-left: 1px solid rgba(0,0,0,.15); }
@@ -269,6 +279,8 @@ footer { padding: 40px 52px; border-top: 1px solid rgba(0,0,0,.09); display: fle
   .city-tab { padding: 6px 18px; }
   .pricing-full { padding: 80px 24px 60px; }
   .pricing-grid { grid-template-columns: 1fr; }
+  .buy-notice { padding: 24px 22px; margin: 40px 0 32px; }
+  .buy-notice-title { font-size: 20px; }
   .price-card { border-right: none; border-bottom: 1px solid rgba(0,0,0,.12); }
   .price-card:last-child { border-bottom: none; }
   .use-cases { flex-direction: column; align-items: flex-start; padding: 28px 0; gap: 10px; }
@@ -307,7 +319,7 @@ footer { padding: 40px 52px; border-top: 1px solid rgba(0,0,0,.09); display: fle
     </h1>
     <div class="hero-name-right">
       <div class="price-summary" data-i18n-html="h-price">
-        <strong>€40</strong> per image · <strong>€99</strong> for three images<span class="note">Licensed for up to one year of use — other terms available on request.</span>
+        <strong>€40</strong> per image · <strong>€99</strong> for three images
       </div>
       <a href="#work" class="buy-link"><span data-i18n="h-buy">Browse &amp; License</span><span class="arrow">→</span></a>
       <a href="https://buy.stripe.com/6oU8wS0nwbCs9s18L593y00" target="_blank" rel="noopener" class="buy-link buy-link--ghost"><span data-i18n="h-buy-bundle">Buy 3 for €99</span><span class="arrow">→</span></a>
@@ -339,12 +351,12 @@ footer { padding: 40px 52px; border-top: 1px solid rgba(0,0,0,.09); display: fle
     <div class="price-card">
       <span class="pc-tier" data-i18n="tier-1">Single</span>
       <div class="pc-price">€40</div>
-      <div class="pc-desc" data-i18n="desc-1">1 image · licensed for up to 1 year</div>
+      <div class="pc-desc" data-i18n="desc-1">1 image · yours to keep</div>
     </div>
     <a href="https://buy.stripe.com/6oU8wS0nwbCs9s18L593y00" target="_blank" rel="noopener" class="price-card pc-featured pc-link">
       <span class="pc-tier" data-i18n="tier-2">Bundle</span>
       <div class="pc-price">€99</div>
-      <div class="pc-desc" data-i18n="desc-2">3 images · licensed for up to 1 year</div>
+      <div class="pc-desc" data-i18n="desc-2">3 images · yours to keep</div>
       <div class="pc-cta"><span data-i18n="pr-bundle-cta">Buy now</span><span class="arrow">→</span></div>
     </a>
     <a href="#contact" class="price-card pc-link">
@@ -353,6 +365,14 @@ footer { padding: 40px 52px; border-top: 1px solid rgba(0,0,0,.09); display: fle
       <div class="pc-desc" data-i18n="desc-4">Special pricing, full archive access or any other questions</div>
       <div class="pc-cta"><span data-i18n="pr-custom-cta">Get in touch</span><span class="arrow">→</span></div>
     </a>
+  </div>
+  <div class="buy-notice" role="note">
+    <div class="buy-notice-eyebrow" data-i18n="notice-eyebrow">Before you order</div>
+    <h3 class="buy-notice-title" data-i18n-html="notice-title">How delivery <em>works</em></h3>
+    <ul>
+      <li data-i18n-html="notice-1">After payment, your high-resolution files will be sent to your email within <strong>24 hours via Google Drive</strong>. Delivery is not automatic or instant.</li>
+      <li data-i18n-html="notice-2"><strong>All sales are final.</strong> As digital licensed files, orders cannot be refunded or returned once delivered.</li>
+    </ul>
   </div>
   <p class="pricing-note-text" data-i18n="pr-note">All licenses include full-resolution digital files — ideal for web, social media, editorial and interior use. Extended or exclusive rights available on request.</p>
   <div class="use-cases">
@@ -480,7 +500,7 @@ const T = {
     'h-top-l':'Edition 2024 — 2026','h-top-c':'Hand-scanned · Licensed archive','h-top-r':'Sicily, Italy',
     'h-title-1':'Sicily','h-title-2':'on film.',
     'h-lede':'A licensed archive of sun-bleached coasts, baroque towns and Sicilian light — every frame shot on 35mm and available for editorial, commercial and interior use.',
-    'h-price':'<strong>€40</strong> per image · <strong>€99</strong> for three images<span class="note">Licensed for up to one year of use — other terms available on request.</span>',
+    'h-price':'<strong>€40</strong> per image · <strong>€99</strong> for three images',
     'h-buy':'Browse & License','h-buy-bundle':'Buy 3 for €99','pr-bundle-cta':'Buy now','price-per':'License',
     'div1-label':'The Archive','div1-meta':'25 frames · Click to license','ov-label':'License',
     'con-h1':'Ready to','con-h2':'license?','con-p':'Get in touch for licensing details, exclusive rights, special pricing or full archive access. Replies within 24 hours.',
@@ -491,8 +511,11 @@ const T = {
     'f-submit':'Send Inquiry','f-error':'Something went wrong — please try again.','f-success':'Thank you — I will get back to you within 24 hours.',
     'pr-label':'Licensing','pr-h':'Priced for <em>every scale</em>','pr-sub':'From a single editorial image to a full brand campaign — all use cases covered.',
     'tier-1':'Single','tier-2':'Bundle','tier-4':'Custom','pr-custom-cta':'Get in touch',
-    'desc-1':'1 image · licensed for up to 1 year','desc-2':'3 images · licensed for up to 1 year','desc-4':'Special pricing, full archive access or any other questions','price-4':'On request',
+    'desc-1':'1 image · yours to keep','desc-2':'3 images · yours to keep','desc-4':'Special pricing, full archive access or any other questions','price-4':'On request',
     'pr-note':'All licenses include full-resolution digital files — ideal for web, social media, editorial and interior use. Extended or exclusive rights available on request.',
+    'notice-eyebrow':'Before you order','notice-title':'How delivery <em>works</em>',
+    'notice-1':'After payment, your high-resolution files will be sent to your email within <strong>24 hours via Google Drive</strong>. Delivery is not automatic or instant.',
+    'notice-2':'<strong>All sales are final.</strong> As digital licensed files, orders cannot be refunded or returned once delivered.',
     'uc-1':'Hotels & Boutique Stays','uc-2':'Travel Editorial','uc-3':'Brand Campaigns','uc-4':'Interior Design','uc-5':'Print Media',
     'proc-label':'How it works','proc-1-h':'Browse the archive','proc-1-p':'Note the frame numbers of the images you want — each is available for immediate licensing.','proc-2-h':'Send an inquiry','proc-2-p':'Tell me which images, your intended use, and for how long. I will confirm and send a quote within 24 hours.','proc-3-h':'Receive files & agreement','proc-3-p':'High-resolution files and a signed license agreement delivered within 48 hours of confirmation.',
     'ab-label':'The Photographer','ab-p1':'Danish photographer shooting exclusively on 35mm film. The archive focuses on Southern Europe — Sicily and Rome — capturing light, texture and everyday life in analogue. Every frame is hand-developed and scanned to high resolution.','ab-p2':'Available for licensing to hotels, travel brands, editorial publications and interior designers. Custom shoots and exclusive rights available on request.',
@@ -502,7 +525,7 @@ const T = {
     'h-top-l':'Edizione 2024 — 2026','h-top-c':'Scansionato a mano · Archivio con licenza','h-top-r':'Sicilia, Italia',
     'h-title-1':'Sicilia','h-title-2':'in pellicola.',
     'h-lede':"Un archivio con licenza di coste sbiancate dal sole, borghi barocchi e luce siciliana — ogni fotogramma su pellicola 35mm, disponibile per uso editoriale, commerciale e d'interni.",
-    'h-price':'<strong>€40</strong> per immagine · <strong>€99</strong> per tre immagini<span class="note">Licenza valida fino a un anno — altri termini disponibili su richiesta.</span>',
+    'h-price':'<strong>€40</strong> per immagine · <strong>€99</strong> per tre immagini',
     'h-buy':'Sfoglia e Acquista','h-buy-bundle':'Acquista 3 per €99','pr-bundle-cta':'Acquista ora','price-per':'Acquista',
     'div1-label':"L'Archivio",'div1-meta':'25 fotogrammi · Clicca per acquistare','ov-label':'Acquista',
     'con-h1':'Pronta per','con-h2':'la licenza?','con-p':"Contattami per dettagli sulla licenza, diritti esclusivi, prezzi speciali o accesso all'archivio completo. Risposta entro 24 ore.",
@@ -513,8 +536,11 @@ const T = {
     'f-submit':'Invia','f-error':'Qualcosa è andato storto — riprova.','f-success':'Grazie — Ti risponderò entro 24 ore.',
     'pr-label':'Licenze','pr-h':'Prezzi per <em>ogni esigenza</em>','pr-sub':"Da una singola immagine editoriale a una campagna completa — tutti i casi d'uso coperti.",
     'tier-1':'Singola','tier-2':'Bundle','tier-4':'Personalizzato','pr-custom-cta':'Contattami',
-    'desc-1':'1 immagine · licenza fino a 1 anno','desc-2':'3 immagini · licenza fino a 1 anno','desc-4':'Prezzi speciali, accesso completo all\'archivio o altre domande','price-4':'Su richiesta',
+    'desc-1':'1 immagine · per sempre','desc-2':'3 immagini · per sempre','desc-4':'Prezzi speciali, accesso completo all\'archivio o altre domande','price-4':'Su richiesta',
     'pr-note':'Tutte le licenze includono file digitali ad alta risoluzione — ideali per web, social media, editoriale e uso d\'interni. Diritti estesi o esclusivi disponibili su richiesta.',
+    'notice-eyebrow':'Prima di ordinare','notice-title':'Come funziona la <em>consegna</em>',
+    'notice-1':'Dopo il pagamento, i file ad alta risoluzione saranno inviati al tuo indirizzo email entro <strong>24 ore tramite Google Drive</strong>. La consegna non è automatica né istantanea.',
+    'notice-2':'<strong>Tutte le vendite sono definitive.</strong> Trattandosi di file digitali con licenza, gli ordini non possono essere rimborsati o restituiti una volta consegnati.',
     'uc-1':'Hotel e Soggiorni','uc-2':'Editoriale di Viaggio','uc-3':'Campagne di Brand','uc-4':'Interior Design','uc-5':'Stampa',
     'proc-label':'Come funziona','proc-1-h':"Sfoglia l'archivio",'proc-1-p':'Nota i numeri di fotogramma delle immagini che vuoi — ognuna è disponibile per la concessione immediata della licenza.','proc-2-h':'Invia una richiesta','proc-2-p':'Dimmi quali immagini, il tuo uso previsto e per quanto tempo. Confermerò e invierò un preventivo entro 24 ore.','proc-3-h':'Ricevi file e contratto','proc-3-p':'File ad alta risoluzione e accordo di licenza firmato consegnati entro 48 ore dalla conferma.',
     'ab-label':'La Fotografa','ab-p1':'Fotografa danese che scatta esclusivamente su pellicola 35mm. L\'archivio si concentra sull\'Europa meridionale — Sicilia e Roma — catturando luce, texture e vita quotidiana in analogico. Ogni fotogramma è sviluppato e scansionato ad alta risoluzione.','ab-p2':'Disponibile per la concessione di licenze a hotel, brand di viaggio, pubblicazioni editoriali e interior designer. Riprese personalizzate e diritti esclusivi disponibili su richiesta.',
